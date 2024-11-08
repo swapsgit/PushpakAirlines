@@ -1,24 +1,13 @@
 package com.airindiacustomer.base;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import com.airindiacustomer.booking.ContactDetails;
-import com.airindiacustomer.booking.EnumTitle;
-import com.airindiacustomer.booking.GenderEnum;
-import com.airindiacustomer.booking.JourneyDetails;
-import com.airindiacustomer.booking.PassangerDetails;
-import com.airindiacustomer.booking.PassportDetails;
-import com.airindiacustomer.booking.TravelDocumentDetails;
 import com.airindiacustomer.validators.BookingClassValidator;
 import com.airindiacustomer.validators.ConcessionTypeValidator;
-import com.airindiacustomer.validators.DateOfBirthValidator;
 import com.airindiacustomer.validators.DepartureDateValidator;
-import com.airindiacustomer.validators.PassportExpiryValidator;
 import com.airindiacustomer.validators.PaymentMethodValidator;
 import com.airindiacustomer.validators.ReturnDateValidator;
 
@@ -67,6 +56,9 @@ public class GetMenu {
 			break;
 		}
 		final LocalDate departureDate = tempDepartureDate;
+		System.out.println("Press 1 to fill more details or 0 to see available flights");
+		int temp = sc.nextInt();
+		if(temp == 1) {
 		System.out.println("Please enter passengers");
 		int passengers = sc.nextInt();
 		sc.nextLine();
@@ -87,11 +79,12 @@ public class GetMenu {
 		AirIndiaCustomerBase alb = new AirIndiaCustomerBase(start, destination, departureDate, returnDate, passengers,
 				bookingClass, payBy, concessionType);
 		aib.add(alb);
-
+		}
 		List<FlightsDetails> lif = fib.stream().filter(a -> a.getOrigin().equalsIgnoreCase(start))
 				.filter(a -> a.getDestination().equalsIgnoreCase(destination))
 				.filter(a -> a.getScheduled_Departure().equals(departureDate.atStartOfDay()) || a.getScheduled_Departure().toLocalDate().isAfter(LocalDate.now()))
 				.collect(Collectors.toList());
+		
 		if (lif.isEmpty()) {
 			System.out.println("No Flight Available");
 			return -1;

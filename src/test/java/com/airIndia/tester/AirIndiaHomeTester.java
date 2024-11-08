@@ -24,10 +24,11 @@ public class AirIndiaHomeTester {
 	static Map<String, JourneyDetails> map;
 	public static void main(String[] args) {
 		map = new HashMap<>();
-		map = RequestData.getData(map);
+		
 		custRequList = new LinkedList<>();
 		flightList = new LinkedList<>();
 		flightList = FlightData.getData(flightList);
+		map = RequestData.getData(map,flightList);
 		custRequList = SearchFlightTestData.getData(custRequList);
 		int choice = 0;
 		try(Scanner sc = new Scanner(System.in)){
@@ -37,7 +38,11 @@ public class AirIndiaHomeTester {
 			switch(choice) {
 			case 1:{
 				int n = GetMenu.displaySearchFlights(sc, custRequList, flightList);
-			
+
+				System.out.println("Do you want to continue 1, 0 for exit");
+				int temp = sc.nextInt();
+				if(temp == 0)
+					continue;
 				if(n == 0)
 					map = MenuSelectFlight.selectFlight(sc, flightList);
 				
@@ -45,11 +50,12 @@ public class AirIndiaHomeTester {
 			}break;
 			case 2:{
 				sc.nextLine();
-				System.out.println("Enter Booking reference number (PNR)*\r	(PNR is required)\r\n");
+				System.out.println("Enter Booking reference number (PNR)*\r	(PNR is required)\r");
 				String pnr = sc.nextLine();
-				System.out.println("	Enter Last Name*\r(Last name is required)");
-				String lastName = sc.nextLine();
+//				System.out.println("Enter Last Name*\r(Last name is required)");
+//				String lastName = sc.nextLine();
 				System.out.println(map.get(pnr).toString());
+				
 				
 			}break;
 			case 3:{
