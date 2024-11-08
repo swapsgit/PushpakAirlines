@@ -1,15 +1,18 @@
 package com.airIndia.tester;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import com.airindiacustomer.base.AirIndiaCustomerBase;
 import com.airindiacustomer.base.GetMenu;
 import com.airindiacustomer.booking.JourneyDetails;
 import com.airindiacustomer.booking.MenuSelectFlight;
 import com.resources.FlightData;
+import com.resources.RequestData;
 import com.resources.SearchFlightTestData;
 
 import airindia.official.FlightsDetails;
@@ -20,6 +23,8 @@ public class AirIndiaHomeTester {
 	static List<FlightsDetails> flightList;
 	static Map<String, JourneyDetails> map;
 	public static void main(String[] args) {
+		map = new HashMap<>();
+		map = RequestData.getData(map);
 		custRequList = new LinkedList<>();
 		flightList = new LinkedList<>();
 		flightList = FlightData.getData(flightList);
@@ -39,6 +44,7 @@ public class AirIndiaHomeTester {
 				
 			}break;
 			case 2:{
+				sc.nextLine();
 				System.out.println("Enter Booking reference number (PNR)*\r	(PNR is required)\r\n");
 				String pnr = sc.nextLine();
 				System.out.println("	Enter Last Name*\r(Last name is required)");
@@ -61,6 +67,11 @@ public class AirIndiaHomeTester {
 				.filter(a->a.getFlight_No().equalsIgnoreCase(flightNo))
 				.forEach(System.out::println);
 				
+			}break;
+			case 5:{
+				for(String str : map.keySet()) {
+					System.out.println(map.get(str).toString());
+				}
 			}break;
 			default: {
 				

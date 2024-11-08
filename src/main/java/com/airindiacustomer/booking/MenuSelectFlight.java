@@ -15,7 +15,7 @@ public class MenuSelectFlight {
 	private static Map<String, JourneyDetails> map;
 	public static Map<String, JourneyDetails> selectFlight(Scanner sc, List<FlightsDetails> list) {
 		sc.nextLine();
-		map = new HashMap<>();
+//		map = new HashMap<>();
 		System.out.println("Please select a flight to continue");
 		String flightNo = sc.nextLine();
 		FlightsDetails selectedFlight = null;

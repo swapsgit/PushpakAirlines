@@ -1,12 +1,12 @@
 package com.airindiacustomer.booking;
 
 public enum EnumTitle {
-	Mr,
-	Mrs,
-	Ms,
-	Mstr,
-	Doctor,
-	Miss;
+	MR,
+	MRS,
+	MS,
+	MSTR,
+	DOCTOR,
+	MISS;
 	
 	EnumTitle(){
 		
