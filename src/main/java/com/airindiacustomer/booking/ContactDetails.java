@@ -5,7 +5,7 @@ public class ContactDetails {
 	private String confirmEmail;
 	private String countryCode;
 	private String mobileNo;
-	
+
 	public ContactDetails(String emailId, String confirmEmail, String countryCode, String mobileNo) {
 		super();
 		this.emailId = emailId;
@@ -19,6 +19,6 @@ public class ContactDetails {
 		return "ContactDetails [emailId=" + emailId + ", confirmEmail=" + confirmEmail + ", countryCode=" + countryCode
 				+ ", mobileNo=" + mobileNo + "]";
 	}
-	
-	
+
+
 }

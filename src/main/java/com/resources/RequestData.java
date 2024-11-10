@@ -29,8 +29,8 @@ public class RequestData {
 			        new TravelDocumentDetails(GenderEnum.valueOf("Male"), new PassportDetails("US", "123456789", LocalDate.parse("2030-12-31"), "US")),
 			        new ContactDetails("john.doe@example.com", "john.doe@example.com", "+1", "1234567890"),
 			        list.get(list.indexOf(new FlightsDetails("AI114")))
-			        	
-			        	
+
+
 			    )
 			);
 

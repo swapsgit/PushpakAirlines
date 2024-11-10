@@ -7,7 +7,7 @@ public class PassportDetails {
 	private String passportNumber;
 	private LocalDate passportExpiry;
 	private String passportIssueCountry;
-	
+
 	public PassportDetails(String nationality, String passportNumber, LocalDate passportExpiry,
 			String passportIssueCountry) {
 		super();
@@ -23,7 +23,7 @@ public class PassportDetails {
 				+ ", passportExpiry=" + passportExpiry + ", passportIssueCountry=" + passportIssueCountry + "]";
 	}
 
-	
-	
-	
+
+
+
 }

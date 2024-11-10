@@ -13,7 +13,7 @@ public class PassangerDetails {
 	private String firstName;
 	private String lastName;
 	private LocalDate dateOfBirth;
-	
+
 	public PassangerDetails(EnumTitle title, String firstName, String lastName, LocalDate dateOfBirth) {
 		super();
 		this.title = title;
@@ -21,6 +21,6 @@ public class PassangerDetails {
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
 	}
-	
-	
+
+
 }

@@ -8,12 +8,12 @@ public class TravelDocumentDetails {
 
 	private GenderEnum gender;
 	private PassportDetails passportDetails;
-	
+
 	public TravelDocumentDetails(GenderEnum gender, PassportDetails passportDetails) {
 		super();
 		this.gender = gender;
 		this.passportDetails = passportDetails;
 	}
-	
-	
+
+
 }

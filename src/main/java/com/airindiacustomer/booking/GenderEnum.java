@@ -5,6 +5,6 @@ public enum GenderEnum {
 	Female,
 	Undisclosed;
 	GenderEnum(){
-		
+
 	}
 }

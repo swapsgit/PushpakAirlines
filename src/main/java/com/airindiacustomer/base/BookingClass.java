@@ -5,8 +5,8 @@ public enum BookingClass {
 	PREMIUM_ECONOMY,
 	BUSINESS,
 	FIRST;
-	
+
 	BookingClass(){
-		
+
 	}
 }

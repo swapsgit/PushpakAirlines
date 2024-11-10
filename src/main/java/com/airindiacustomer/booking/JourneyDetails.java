@@ -8,7 +8,7 @@ public class JourneyDetails {
 	private TravelDocumentDetails tdd;
 	private ContactDetails conDetails;
 	private FlightsDetails flight;
-	
+
 	public JourneyDetails(PassangerDetails pd, TravelDocumentDetails tdd, ContactDetails conDetails,FlightsDetails flight) {
 		super();
 		this.journeyId = "AI"+String.valueOf(startId++);
@@ -16,8 +16,8 @@ public class JourneyDetails {
 		this.tdd = tdd;
 		this.conDetails = conDetails;
 		this.flight = flight;
-		
-		
+
+
 	}
 
 	public String getJourneyId() {

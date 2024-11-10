@@ -12,10 +12,11 @@ import com.airindiacustomer.validators.PassportExpiryValidator;
 import airindia.official.FlightsDetails;
 
 public class MenuSelectFlight {
+	
 	private static Map<String, JourneyDetails> map;
-	public static Map<String, JourneyDetails> selectFlight(Scanner sc, List<FlightsDetails> list) {
+	public static Map<String, JourneyDetails> selectFlight(Scanner sc, List<FlightsDetails> list,Map<String, JourneyDetails> mapp) {
 		sc.nextLine();
-//		map = new HashMap<>();
+		map = mapp;
 		System.out.println("Please select a flight to continue");
 		String flightNo = sc.nextLine();
 		FlightsDetails selectedFlight = null;
@@ -30,7 +31,7 @@ public class MenuSelectFlight {
 		}
 		System.out.println("Please Enter Personal details");
 		System.out.println("Enter title (Mr," + "	Mrs," + "	Ms," + "	Mstr," + "	Doctor," + "	Miss)");
-		String title = sc.nextLine();
+		String title = sc.nextLine().toUpperCase();
 		System.out.println(" firstName");
 		String firstName = sc.nextLine();
 		System.out.println(" lastName");
@@ -72,13 +73,13 @@ public class MenuSelectFlight {
 
 		JourneyDetails jd = new JourneyDetails(pd, tdd, conDetails, selectedFlight);
 				map.put(jd.getJourneyId(), jd);
-				
+
 				System.out.println(map.get(jd.getJourneyId()).toString());
 				System.out.println("Your reservation is done for flight no "+selectedFlight.getFlight_No());
-		
+
 				return map;
 
-		
+
 
 	}
 

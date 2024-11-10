@@ -84,16 +84,16 @@ public class GetMenu {
 				.filter(a -> a.getDestination().equalsIgnoreCase(destination))
 				.filter(a -> a.getScheduled_Departure().equals(departureDate.atStartOfDay()) || a.getScheduled_Departure().toLocalDate().isAfter(LocalDate.now()))
 				.collect(Collectors.toList());
-		
+
 		if (lif.isEmpty()) {
 			System.out.println("No Flight Available");
 			return -1;
 		}
-		
+
 		lif.forEach(System.out::println);
 		return 0;
-		
+
 	}
-	
-	
+
+
 }

@@ -5,8 +5,8 @@ public enum ConcessionType {
 	STUDENT,
 	SENIOR_CITIZEN,
 	ARMED_FORCES;
-	
+
 	ConcessionType(){
-		
+
 	}
 }

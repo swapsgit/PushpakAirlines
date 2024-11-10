@@ -11,7 +11,7 @@ public class AirIndiaCustomerBase {
 	private BookingClass bookingClass;
 	private PaymentMethod payBy;
 	private ConcessionType concessionType;
-	
+
 	public AirIndiaCustomerBase(String start, String destination, LocalDate departureDate, LocalDate returnDate, int passengers,
 			BookingClass bookingClass, PaymentMethod payBy, ConcessionType concessionType) {
 		super();
@@ -24,14 +24,14 @@ public class AirIndiaCustomerBase {
 		this.payBy = payBy;
 		this.concessionType = concessionType;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "AirIndiaBase [start=" + start + ", destination=" + destination + ", departureDate=" + departureDate
 				+ ", returnDate=" + returnDate + ", passengers=" + passengers + ", bookingClass=" + bookingClass
 				+ ", payBy=" + payBy + ", concessionType=" + concessionType + "]";
 	}
-	
-	
-	
+
+
+
 }
